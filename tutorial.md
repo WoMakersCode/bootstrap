@@ -87,6 +87,22 @@ Não vamos falar muito sobre o sistema de grade em profundidade neste tutorial, 
 Vamos primeiro criar um wrapper de conteúdo para adicionar uma espécie de welcome em nosso ToDo App e também o header da página, que terá link para ações de criar nova tarefa e visualizar a listagem. Para isso, adicione o seguinte trecho de código em seu arquivo index.html, substituindo o trecho escrito ``<!---CONTENT HERE-->``.
 
 ```html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">ToDo App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Ver todas as tarefas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="criar.html">Criar nova tarefa</a>
+                </li>        
+                </ul>
+            </div>
+            </nav>
 <div class="container">
   <div class="jumbotron">
     <h1>Bootstrap Tutorial</h1>      
