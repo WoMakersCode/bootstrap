@@ -7,7 +7,6 @@ Antes de começar, certifique-se de ter um editor de código, como texto, Visual
 Para este tutorial, você deverá criar uma pasta com o nome do seu projeto e nela, você deverá criar uma estrutura três pastas e dois arquivos HTML:
 
 - index.html – este servirá como um arquivo principal, no qual iremos listar as tarefas do aplicativo
-- pasta img - para imagens
 - pasta css - para folhas de estilo (CSS)
 - pasta js - para JavaScript
 
@@ -20,28 +19,33 @@ Para este tutorial, nos concentraremos em escolher os arquivos necessários que 
 Uma vez baixado, descompacte os arquivos de origem do Bootstrap e copie os seguintes arquivos dentro da pasta dist. Você pode obter esses arquivos dentro da pasta css e js ao abrir a pasta dist.
 
 ### Marcação Básica
-Nosso documento HTML começará com o HTML5 <! DOCTYPE> para especificar qual idioma e versão o nosso documento está usando. Então, na nossa seção <head>, podemos colocar todos os nossos links CSS, JavaScripts e fontes / imagens. Para fins de desempenho, você pode querer colocar os arquivos JavaScript na parte inferior do documento (antes da tag de fechamento </ body>). 
+Nosso documento HTML começará com o HTML5 ``<!DOCTYPE html>`` para informar ao navegador que trata-se de um documento HTML. Então, na nossa seção ``<head>``, podemos colocar todos os nossos links CSS e Webfonts (fontes de texto customizadas). Para fins de desempenho, você pode querer colocar os arquivos JavaScript na parte inferior do documento (antes da tag de fechamento ``</body>``). 
 ```html
-<!-- DOCTYPE -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Boostrap 4 - Tutorial</title>
-<!-- Required meta tags always come first -->
-<meta charset="utf-8">
-<meta name="author" content="Sam Norton">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css">
-<!-- Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,700,900' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>Boostrap 4 - ToDo APP</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Sam Norton">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
+
+<body>
+    <!-- CONTENT HERE -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
 ```
 
-Podemos também adicionar o seguinte código para forçar o Internet Explorer a renderizar para o modo de renderização e a propriedade meta viewport para visualização sensível.
+Note que estamos utilizando duas meta tags diferentes, a viewport e a http-equix, que servem para auxiliar o navegador a renderizar a página considerando o tamanho da tela, ou seja, aplicará um design diferenciado e ajustável a cada tamanho de tela, quando estivermos trabalhando com o Bootstrap ou fazendo a escrita de CSS com media-queries.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,36 +54,6 @@ Podemos também adicionar o seguinte código para forçar o Internet Explorer a 
 
 Para começar, usaremos o modelo abaixo como nosso HTML inicial para o nosso modelo responsivo de uma página. Observe que adicionei alguns links de bibliotecas hospedadas, como Font Awesome e Google Fonts. 
 
-```html
-<!-- DOCTYPE -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Boostrap 4 - Tutorial</title>
-<!-- Required meta tags always come first -->
-<meta charset="utf-8">
-<meta name="author" content="Sam Norton">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css">
-<!-- Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,700,900' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-</head>
-<body>
-<!---CONTENT HERE-->
-<!-- JavaScripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/tether.min.js"></script>
-</body>
-</html>
-```
-
 ### Trabalhando com Grids
 O sistema de grade Bootstrap 4 pode ter 12 colunas e você pode escolher a escala de coluna que deseja exibir em diferentes tamanhos de viewport. Confira a grade média Bootstrap 4 abaixo com as classes.
 
@@ -87,103 +61,132 @@ Não vamos falar muito sobre o sistema de grade em profundidade neste tutorial, 
 Vamos primeiro criar um wrapper de conteúdo para adicionar uma espécie de welcome em nosso ToDo App e também o header da página, que terá link para ações de criar nova tarefa e visualizar a listagem. Para isso, adicione o seguinte trecho de código em seu arquivo index.html, substituindo o trecho escrito ``<!---CONTENT HERE-->``.
 
 ```html
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">ToDo App</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Ver todas as tarefas</a>
+    <header class="tdapp-header">
+        <nav>
+            <ul>
+                <li>
+                    <a class="p-2 text-dark" href="index.html">Lista de Tarefas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="criar.html">Criar nova tarefa</a>
-                </li>        
-                </ul>
-            </div>
-            </nav>
-<div class="container">
-  <div class="jumbotron">
-    <h1>Bootstrap Tutorial</h1>      
-    <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>
-  </div>
-  <p>This is some text.</p>      
-  <p>This is another text.</p>      
-</div>
+                <li>
+                    <a class="p-2 text-dark" href="criar.html">Adicionar tarefa</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1>Bootstrap Tutorial</h1>
+            <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on
+                the web.</p>
+        </div>
+
+    </div>
 ```
 
 ### Listagem de tarefas
-Feito o setup inicial da sua página, vamos adicionar uma tabela de listagem das nossas tarefas. Para isso, após o trecho que adicionamos no passo anterior, crie um novo container e adicione uma tabela.
+Feito o setup inicial da sua página, vamos adicionar uma tabela de listagem das nossas tarefas. Para isso, após o trecho de HTML que adicionamos no passo anterior, crie um novo container e adicione uma tabela. Você pode copiar e colar o código abaixo para facilitar a integração da tabela à sua página.
 
 ```html
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href="#">ToDo App</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-    <li class="nav-item active">
-        <a class="nav-link" href="#">Ver todas as tarefas</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="criar.html">Criar nova tarefa</a>
-    </li>        
-    </ul>
-</div>
-</nav>
 <div class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome da tarefa</th>
-                <th scope="col">Status</th>
-                <th scope="col">Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Fazer tutorial</td>
-                <td>Incompleta</td>
-                <td>
-                    <button type="button" class="btn btn-success">Finalizar</button>
-                    <button type="button" class="btn btn-warning">Editar</button>
-                    <button type="button" class="btn btn-danger">Deletar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome da tarefa</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Fazer tutorial</td>
+                    <td>Incompleta</td>
+                    <td>
+                        <button type="button" class="btn btn-success">Finalizar</button>
+                        <button type="button" class="btn btn-warning">Editar</button>
+                        <button type="button" class="btn btn-danger">Deletar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 ```
 
-### Criar nova tarefa
+### Adicionando um rodapé a página
+Por questões de boas práticas em interface web, vamos adicionar um rodapé a nossa página, com ícones e links para nossas redes sociais e também um texto informando a autoria do projeto e o ano.
+
+```html
+<footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <p>
+                        © 2018 - Women Dev Summit na Campus Party
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+```
+
+## PASSO 2: Template de Criação e Edição de Tarefa
+
+### Formulário de Tarefas
+
 Com a página inicial pronta, vamos criar o template da página de formulário para criação e edição da tarefa. Para isso, crie um novo arquivo chamado ``criar.html``. Nele, adicione a mesma estrutura do ``index.html`` e vamos substituir o conteúdo pelo formulário.
 
 Copie este código e substitua o container de conteúdo:
 
 ```html
-<div class="container">
-    <form action="#" method="post">
-        <div class="form-group">
-            <label for="tdapp-nome">Nome da tarefa</label>
-            <input type="text" id="tdapp-nome" class="form-control" placeholder="Informe o nome da sua tarefa">
-        </div>
-        <div class="form-group">
-            <label for="tdapp-status">Status da Tarefa</label>
-            <select class="form-control" id="tdapp-status">
-                <option>Nova</option>
-                <option>Incompleta</option>
-                <option>Finalizada (apenas para registro)</option>
-            </select>
-        </div>
+    <div class="container">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="tdapp-nome">Nome da tarefa</label>
+                <input type="text" id="tdapp-nome" class="form-control" placeholder="Informe o nome da sua tarefa">
+            </div>
+            <div class="form-group">
+                <label for="tdapp-status">Status da Tarefa</label>
+                <select class="form-control" id="tdapp-status">
+                    <option>Nova</option>
+                    <option>Incompleta</option>
+                    <option>Finalizada (apenas para registro)</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="tdapp-info">Descrição da atividade</label>
-            <textarea class="form-control" id="tdapp-info" rows="3"></textarea>
-        </div>
-    </form>
-</div>
+            <div class="form-group">
+                <label for="tdapp-info">Descrição da atividade</label>
+                <textarea class="form-control" id="tdapp-info" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success">
+            </div>
+        </form>
+    </div>
 ```
+
+## Adicionando um estilo à sua página
