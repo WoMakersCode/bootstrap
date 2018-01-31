@@ -82,7 +82,7 @@ Para começar, usaremos o modelo abaixo como nosso HTML inicial para o nosso mod
 O sistema de grade Bootstrap 4 pode ter 12 colunas e você pode escolher a escala de coluna que deseja exibir em diferentes tamanhos de viewport. Confira a grade média Bootstrap 4 abaixo com as classes.
 
 Não vamos falar muito sobre o sistema de grade em profundidade neste tutorial, no entanto, iremos direto na escala de coluna que vamos usar no nosso modelo de uma página.
-Vamos primeiro criar um wrapper de conteúdo para adicionar uma espécie de welcome em nosso ToDo App. Para isso, adicione o seguinte trecho de código em seu arquivo index.html, substituindo o trecho escrito ``<!---CONTENT HERE-->``.
+Vamos primeiro criar um wrapper de conteúdo para adicionar uma espécie de welcome em nosso ToDo App e também o header da página, que terá link para ações de criar nova tarefa e visualizar a listagem. Para isso, adicione o seguinte trecho de código em seu arquivo index.html, substituindo o trecho escrito ``<!---CONTENT HERE-->``.
 
 ```html
 <div class="container">
@@ -99,7 +99,23 @@ Vamos primeiro criar um wrapper de conteúdo para adicionar uma espécie de welc
 Feito o setup inicial da sua página, vamos adicionar uma tabela de listagem das nossas tarefas. Para isso, após o trecho que adicionamos no passo anterior, crie um novo container e adicione uma tabela.
 
 ```html
-<div class=”container”>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#">ToDo App</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+    <li class="nav-item active">
+        <a class="nav-link" href="#">Ver todas as tarefas</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="criar.html">Criar nova tarefa</a>
+    </li>        
+    </ul>
+</div>
+</nav>
+<div class="container">
     <table class="table">
         <thead>
             <tr>
@@ -124,3 +140,6 @@ Feito o setup inicial da sua página, vamos adicionar uma tabela de listagem das
     </table>
 </div>
 ```
+
+### Criar nova tarefa
+Com a página inicial pronta, vamos criar o template da página de formulário para criação e edição da tarefa. Para isso, crie um novo arquivo chamado ``criar.html``. Nele, adicione a mesma estrutura do ``index.html`` e vamos substituir o conteúdo pelo formulário.
