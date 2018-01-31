@@ -143,3 +143,29 @@ Feito o setup inicial da sua página, vamos adicionar uma tabela de listagem das
 
 ### Criar nova tarefa
 Com a página inicial pronta, vamos criar o template da página de formulário para criação e edição da tarefa. Para isso, crie um novo arquivo chamado ``criar.html``. Nele, adicione a mesma estrutura do ``index.html`` e vamos substituir o conteúdo pelo formulário.
+
+Copie este código e substitua o container de conteúdo:
+
+```html
+<div class="container">
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="tdapp-nome">Nome da tarefa</label>
+            <input type="text" id="tdapp-nome" class="form-control" placeholder="Informe o nome da sua tarefa">
+        </div>
+        <div class="form-group">
+            <label for="tdapp-status">Status da Tarefa</label>
+            <select class="form-control" id="tdapp-status">
+                <option>Nova</option>
+                <option>Incompleta</option>
+                <option>Finalizada (apenas para registro)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tdapp-info">Descrição da atividade</label>
+            <textarea class="form-control" id="tdapp-info" rows="3"></textarea>
+        </div>
+    </form>
+</div>
+```
