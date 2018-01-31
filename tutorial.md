@@ -82,7 +82,7 @@ Para começar, usaremos o modelo abaixo como nosso HTML inicial para o nosso mod
 O sistema de grade Bootstrap 4 pode ter 12 colunas e você pode escolher a escala de coluna que deseja exibir em diferentes tamanhos de viewport. Confira a grade média Bootstrap 4 abaixo com as classes.
 
 Não vamos falar muito sobre o sistema de grade em profundidade neste tutorial, no entanto, iremos direto na escala de coluna que vamos usar no nosso modelo de uma página.
-Vamos primeiro criar um wrapper de conteúdo para adicionar uma espécie de welcome em nosso ToDo App. Para isso, adicione o seguinte trecho de código em seu arquivo index.html, dentro do bloco ``<body></body``.
+Vamos primeiro criar um wrapper de conteúdo para adicionar uma espécie de welcome em nosso ToDo App. Para isso, adicione o seguinte trecho de código em seu arquivo index.html, substituindo o trecho escrito ``<!---CONTENT HERE-->``.
 
 ```html
 <div class="container">
@@ -92,5 +92,35 @@ Vamos primeiro criar um wrapper de conteúdo para adicionar uma espécie de welc
   </div>
   <p>This is some text.</p>      
   <p>This is another text.</p>      
+</div>
+```
+
+### Listagem de tarefas
+Feito o setup inicial da sua página, vamos adicionar uma tabela de listagem das nossas tarefas. Para isso, após o trecho que adicionamos no passo anterior, crie um novo container e adicione uma tabela.
+
+```html
+<div class=”container”>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome da tarefa</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Fazer tutorial</td>
+                <td>Incompleta</td>
+                <td>
+                    <button type="button" class="btn btn-success">Finalizar</button>
+                    <button type="button" class="btn btn-warning">Editar</button>
+                    <button type="button" class="btn btn-danger">Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 ```
