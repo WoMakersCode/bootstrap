@@ -153,6 +153,9 @@ Por questões de boas práticas em interface web, vamos adicionar um rodapé a n
     </footer>
 ```
 
+![tela1](https://user-images.githubusercontent.com/2198735/35646892-e131ab30-06b7-11e8-8442-53f9a94b325b.PNG)
+
+
 ## PASSO 2: Template de Criação e Edição de Tarefa
 
 ### Formulário de Tarefas
@@ -187,6 +190,8 @@ Copie este código e substitua o container de conteúdo:
         </form>
     </div>
 ```
+![tela2](https://user-images.githubusercontent.com/2198735/35646893-e151e8f0-06b7-11e8-9e62-42cf45efc21d.PNG)
+
 
 ## Adicionando um estilo à sua página
 
@@ -345,6 +350,6 @@ button.contact.submit:hover {
 ```
 
 Salve e teste em seu navegador. O resultado será este:
-
+![tela3](https://user-images.githubusercontent.com/2198735/35646894-e172a7b6-06b7-11e8-8d07-3e9b0745d4d6.PNG)
 
 Gostou e quer fazer mais coisas? Coloque sua criatividade para funcionar e conte com a ajuda das mentoras para melhorar sua página!
