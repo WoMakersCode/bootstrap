@@ -31,7 +31,6 @@ Nosso documento HTML começará com o HTML5 ``<!DOCTYPE html>`` para informar ao
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
@@ -190,3 +189,162 @@ Copie este código e substitua o container de conteúdo:
 ```
 
 ## Adicionando um estilo à sua página
+
+Se você seguiu os passos até aqui, irá notar que o visual das nossas páginas está bastante simples. Que tal adicionarmos um pouco de estilo?!
+
+Crie um arquivo chamado ``custom.css`` e salve-o dentro da pasta ``css`` e adicione a chamada para este arquivo dentro do ``<head>``, que deverá ficar assim:
+
+```html
+<head>
+    <title>Boostrap 4 - ToDo APP</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Sam Norton">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+```
+
+Esta chamada fará com que os estilos que escrevermos neste documento será interpretado pelo browser, trazendo mais design para nossa página :smile:. No arquivo custom.css, adicione o seguinte código:
+
+```css
+.tdapp-header {
+    box-shadow: 1px 2px 10px #ccc;
+}
+
+.tdapp-header ul {
+    list-style: none;
+}
+
+.tdapp-header ul li {
+    display: inline-block;
+    padding: 15px;
+}
+
+.tdapp-header ul li a {
+    color: #2A2575;
+    font-weight: bold;
+}
+
+.footer {
+    background:#563d7c;
+    margin-top:120px;
+    position:relative
+}
+
+.footer .container {
+    padding:60px 0 20px;
+}
+
+.footer ul {
+    margin:0 auto;
+    margin-bottom:30px;
+    margin-top:10px;
+    text-align:center;
+    list-style-type:none;
+    padding-left:0;
+}
+
+.footer ul li {
+	text-align:center;
+    display:inline-block;
+    background:rgba(0,0,0,0.2);
+    color:#fff;
+    line-height:45px;
+    margin:0 4px;
+    width:45px!important;
+    height:45px!important;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+}
+
+.footer ul li:hover {
+    background:#2a2a2a;
+}
+
+.footer ul li:hover	a {
+    color:#fff;
+}
+
+.footer ul li a {
+    color:#fff;
+    width:42px!important;
+    height:42px!important;
+}
+
+.footer ul li a i {
+    line-height:45px;
+    color:#fff;
+}
+
+.footer p {
+    color:#fff;
+    font-size:.9em;
+    line-height:24px;
+    font-weight:300;
+    text-align:center;
+    text-transform:uppercase;
+}
+
+.footer a,.footer a:hover {
+    color:#fff;
+}
+
+input.form-control,
+select.form-control {
+    background:#fff;
+    border:solid 1px #ddd;
+    color:#000;
+    padding:15px 30px;
+    margin-right:3%;
+    margin-bottom:30px;
+    outline:none;
+    border-radius: 0;
+}
+
+textarea.form-control {
+    background:#fff;
+    color:#000;
+    border:solid 1px #ddd;
+    padding:15px 30px;
+    margin-bottom:40px;
+    outline:none;
+    height:200px;
+    border-radius: 0;
+}
+
+button.contact.submit {
+    background:#333;
+    font-family:'Lato',sans-serif;
+    color:#fff;
+    font-size:1em;
+    font-weight:400;
+    text-align:center;
+    margin:0;
+    border:none!important;
+    border-radius:3px;
+    padding:15px 45px;
+}
+
+button.contact.submit:hover {
+    background:#563d7c;
+}
+
+.form-control:focus{
+    border-color: #563d7c;
+    outline: 0;
+}
+
+
+.done {
+    display:none;
+}
+```
+
+Salve e teste em seu navegador. O resultado será este:
+
+
+Gostou e quer fazer mais coisas? Coloque sua criatividade para funcionar e conte com a ajuda das mentoras para melhorar sua página!
